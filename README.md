@@ -1,36 +1,98 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Rental Car
 
-## Getting Started
+Учебное веб-приложение для поиска автомобилей, просмотра характеристик и подачи заявки на аренду. Интерфейс разрабатывается по макету Figma.
 
-First, run the development server:
+**Статус: в разработке.** Сейчас готовы главная страница и базовая навигация. Каталог пока содержит только заголовок — поиск и аренда ещё не реализованы.
+
+## Что уже реализовано
+
+- Главная страница с баннером и ссылкой на каталог.
+- Общая шапка с логотипом и навигацией Home / Catalog.
+- Выделение текущего раздела в меню.
+- Базовый маршрут `/catalog`.
+- Шрифт Manrope, глобальные стили и CSS Modules.
+- Настройки ESLint, Prettier и проверки TypeScript.
+
+## План развития
+
+- Получение автомобилей из API и отображение карточек.
+- Фильтрация каталога и загрузка следующих результатов.
+- Состояния загрузки, ошибки и отсутствия результатов.
+- Избранное с сохранением выбора после обновления страницы.
+- Страница с подробной информацией об автомобиле.
+- Форма заявки на аренду.
+- Завершение оформления по макету и проверка на разных размерах экрана.
+
+## Технологии
+
+- Next.js 16 — App Router.
+- React 19 и TypeScript.
+- CSS Modules и глобальный CSS, без Tailwind CSS.
+- Manrope через `next/font/google`.
+- ESLint и Prettier.
+
+Axios, TanStack Query и React Icons установлены для дальнейшей разработки. Получение данных из API пока не подключено.
+
+## Локальный запуск
+
+Для запуска нужны Git, Node.js версии 20.9.0 или выше и npm.
+
+Клонируйте репозиторий и перейдите в папку проекта:
+
+```bash
+git clone https://github.com/Dmytro777-lab/rental-car.git
+cd rental-car
+```
+
+Установите зависимости из lock-файла:
+
+```bash
+npm ci
+```
+
+Запустите сервер разработки:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Откройте [главную страницу](http://localhost:3000) или [каталог](http://localhost:3000/catalog). Если порт занят, используйте адрес, указанный в терминале.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Для первоначальной загрузки шрифта Manrope через Google Fonts нужен доступ к интернету.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Команды проекта
 
-## Learn More
+| Команда                | Назначение                                     |
+| ---------------------- | ---------------------------------------------- |
+| `npm run dev`          | Запустить сервер разработки                    |
+| `npm run build`        | Создать production-сборку                      |
+| `npm start`            | Запустить готовую сборку после `npm run build` |
+| `npm run lint`         | Проверить код с помощью ESLint                 |
+| `npm run typecheck`    | Проверить типы TypeScript                      |
+| `npm run format:check` | Проверить форматирование без изменения файлов  |
+| `npm run format`       | Отформатировать файлы проекта                  |
 
-To learn more about Next.js, take a look at the following resources:
+## Структура проекта
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```text
+app/
+  layout.tsx           — общий layout, шрифт и Header
+  page.tsx             — главная страница
+  Home.module.css      — стили баннера
+  globals.css          — глобальные стили
+  catalog/
+    page.tsx           — базовая страница каталога
+components/
+  Header/
+    Header.tsx         — шапка и логотип
+    Navigation.tsx     — меню и определение активного раздела
+    Header.module.css  — стили шапки
+public/
+  MainBanner.png       — изображение баннера
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Автор
 
-## Deploy on Vercel
+[Dmytro — GitHub](https://github.com/Dmytro777-lab)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+[Репозиторий проекта](https://github.com/Dmytro777-lab/rental-car)
