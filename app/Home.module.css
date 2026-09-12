@@ -1,0 +1,90 @@
+.hero {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  min-height: 700px;
+  padding: 60px 24px;
+  isolation: isolate;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-color: #00000033;
+  pointer-events: none;
+}
+
+.heroImage {
+  object-fit: cover;
+  object-position: center;
+  z-index: -1;
+}
+
+.content {
+  z-index: 1;
+  position: relative;
+  color: #ffffff;
+  width: 100%;
+  max-width: 783px;
+  text-align: center;
+}
+
+.title {
+  font-size: 60px;
+  line-height: 72px;
+  font-weight: 700;
+  margin: 0 0 16px;
+}
+
+.description {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 32px;
+  margin: 0 0 40px;
+}
+
+.catalogLink {
+  background-color: #00aad4;
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 276px;
+  max-width: 100%;
+  min-height: 44px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  text-decoration: none;
+  padding: 12px 24px;
+}
+
+.catalogLink:hover {
+  background-color: #0095ba;
+}
+
+.catalogLink:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 4px;
+}
+
+@media (max-width: 767px) {
+  .hero {
+    padding: 40px 20px;
+  }
+
+  .title {
+    font-size: 36px;
+    line-height: 44px;
+  }
+
+  .description {
+    font-size: 20px;
+    line-height: 28px;
+  }
+}
