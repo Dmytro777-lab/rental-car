@@ -1,5 +1,6 @@
 import { Manrope } from 'next/font/google';
 import Header from '@/components/Header/Header';
+import QueryProvider from '@/components/QueryProvider/QueryProvider';
 import type { Metadata } from 'next';
 import './globals.css';
 
@@ -17,8 +18,10 @@ export default function RootLayout({ children }: LayoutProps<'/'>) {
   return (
     <html lang="en" className={manrope.variable}>
       <body>
-        <Header />
-        {children}
+        <QueryProvider>
+          <Header />
+          {children}
+        </QueryProvider>
       </body>
     </html>
   );
