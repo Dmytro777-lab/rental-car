@@ -1,4 +1,5 @@
 'use client';
+import BookingForm from '../BookingForm/BookingForm';
 import { useQuery } from '@tanstack/react-query';
 import { getCarById } from '@/lib/api/cars';
 import Image from 'next/image';
@@ -23,6 +24,7 @@ export default function CarDetails({ id }: CarDetailsProps) {
     <article>
       <div>
         <Image src={car.img} alt={`${car.brand} ${car.model}`} width={640} height={512} />
+        <BookingForm carId={car.id} />
       </div>
       <div>
         <h2>
