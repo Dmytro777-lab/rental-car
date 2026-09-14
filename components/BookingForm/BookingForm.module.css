@@ -1,0 +1,45 @@
+.card {
+  background: white;
+  padding: 32px;
+  border-radius: 16px;
+}
+.card h2 {
+  font-size: 20px;
+  line-height: 28px;
+  margin: 0 0 8px;
+}
+.subtitle {
+  color: #8d929a;
+  margin: 0 0 24px;
+}
+.form {
+  display: grid;
+  gap: 16px;
+}
+.form label {
+  display: block;
+  margin-bottom: 6px;
+}
+.input {
+  display: block;
+  width: 100%;
+  border: 1px solid transparent;
+  background: #f7f7f7;
+  border-radius: 12px;
+  padding: 14px 18px;
+  color: var(--foreground);
+}
+textarea.input {
+  min-height: 88px;
+  resize: vertical;
+}
+.errorText {
+  color: #ff414b;
+  font-size: 12px;
+  margin: 4px 0 0;
+}
+@media (max-width: 540px) {
+  .card {
+    padding: 24px;
+  }
+}

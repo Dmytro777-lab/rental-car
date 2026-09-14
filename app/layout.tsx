@@ -18,6 +18,9 @@ export default function RootLayout({ children }: LayoutProps<'/'>) {
   return (
     <html lang="en" className={manrope.variable}>
       <body>
+        <a href="#main-content" className="skip-link">
+          Skip to content
+        </a>
         <QueryProvider>
           <Header />
           {children}
