@@ -4,7 +4,7 @@
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
-  min-height: 700px;
+  min-height: calc(100vh - 72px);
   padding: 60px 24px;
   isolation: isolate;
 }
